@@ -10,8 +10,8 @@
 - **No SMD Soldering Required**: Uses pre-built ESP32-C3 & RF modules only  
 - **Dual-Function Hardware**: Software-configurable as receiver or transmitter  
 - **Beginner-Friendly Assembly**: Connect modules via jumper wires or custom PCB  
-- **Cost Efficiency**: Total BOM under **¥30 (≈$4.2) in China** 
-- **Advanced Connectivity**: UART, PWM, voltage sensing, I²C expansion  
+- **Cost Efficiency**: Total BOM under **¥20 (≈$3) in China** 
+- **Interface types**: UART, PWM, I²C expansion, voltage sensing
 
 ## 📦 Core Hardware
 | Module | Specification | Key Notes |
@@ -33,12 +33,14 @@
 ### 🌍 Cost Comparison by Region(All countries except China are for reference only.)
 | Region       | Modules Cost | Shipping | Est. Total | Availability |
 |--------------|--------------|----------|------------|--------------|
-| China Mainland | ¥25          | ¥0       | **$3.5**   | 2-3days (Sent from Shenzhen)    |
+| China Mainland | ¥20          | ¥0       | **$3**   | 2-3days (Sent from Shenzhen)    |
 | USA          | $9           | $4       | **$13**    | 2-3 weeks    |
 | EU           | €8           | €5       | **€13**    | 3-4 weeks    |
-Even in China, this is a very low price – three times cheaper than commercially available finished products.
 
 ---
+Even in China, this is a very low price – three times cheaper than commercially available finished products.
+
+
 
 ## 🔗 Resources
 - [📺 Video Tutorial](https://b23.tv/cTPp4Ne) · [📁 PCB Files](https://oshwhub.com/jianchibuyongduo/board2)  
@@ -120,8 +122,8 @@ https://oshwhub.com/jianchibuyongduo/board2
 三、欢迎大家加入QQ讨论群：
 902021691
 [图片]
-四、GITHUB没图，如果文档有更新，这里最全：
+四、GITHUB没图片，如果文档有更新，飞书这里最全：
 https://xcnmlw0olagh.feishu.cn/wiki/SgmEwbcjciPRihklynUcdX4qnAJ
-鸣谢：感谢@长江几号，他是和我住的比较近的本地模友，在我研制高频头的过程中， 提供了高频头支持，因为我本没有高频头，就没法测试接收机，在此感谢！
+鸣谢：感谢@长江几号，他是和我住的比较近的本地模友，在我研制接收机的过程中， 提供了高频头支持测试，因为我本没有高频头，就没法测试接收机，在此感谢！
 
 
