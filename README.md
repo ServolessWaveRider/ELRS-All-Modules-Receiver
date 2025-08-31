@@ -1,36 +1,62 @@
-# ELRS-All-Modules-Receiver
+# ELRS-NoSMD-Receiver
 这款「全是模块 elrs 接收机」DIY 方案，ESP3—C3芯片，仅需两模块（各十块钱），20 元内搞定，无需焊接任何分立元器件，手搓难度极低，无需对付贴片小元件，功能全，还能秒变发射机。
 过了英文摘要就是详细中文内容
-## Dual-Module ELRS Receiver (Open Source Project)
-A cost-effective, beginner-friendly ELRS receiver solution independently developed by a Chinese high school student, designed for DIY enthusiasts.
-Project demo/tutorial video (Bilibili) →https://b23.tv/cTPp4Ne
-### Project Overview
-This open-source solution innovatively combines two core modules to achieve full ELRS receiver functionality, eliminating the pain point of "needing to solder tiny discrete components" in traditional open-source solutions. The assembly threshold is extremely low (accessible to beginners), with a total cost under 30 RMB (~$4.2), while supporting flexible expansion and function switching.  
-- License Note: Reproduction, modification, and secondary distribution are permitted, but the original author ("坚持不用舵ServolessWaverider") and source must be credited. Claiming "original creation" or altering copyright information is prohibited.
 
-### Key Advantages
-1. **Extremely Low Assembly Threshold**: No need to solder tiny discrete components—simply connect the two modules (supports jumper wire for quick testing or PCB mounting for long-term use), beginner-friendly.
-2. **Full Function Coverage**:
-   - Basic Functions: UART connection to flight controller, 6-channel PWM signal output, real-time battery voltage detection;
-   - Expansion Functions: Additional modules (e.g., barometer, GPS) can be connected to realize flight data transmission without a flight controller;
-   - Dual-Mode Switching: Leveraging the ESP32-C3 chip's features, it can be software-defined as a "module" and installed in a remote control for use as a transmitter—one device, two uses.
 
-3. **Cost-Effective**: The combined cost of core modules is under 30 RMB, significantly reducing the entry cost compared to commercial ELRS devices, suitable for enthusiasts with limited budgets.
+> **A revolutionary ExpressLRS receiver design** eliminating surface-mount soldering,**No discrete components** needed at all
+> built by creatively combining **two commercial PCBA modules** with **full configurability**，while keeping **costs extremely low**（perhaps only in China）
 
-### Core Hardware Selection
-| Module Name          | Model/Specs               | Core Role       | Description                                                                 |
-|----------------------|---------------------------|-----------------|-----------------------------------------------------------------------------|
-| ESP32-C3 Dev Board   | Super Mini (4MB Flash)    | Main Controller | Compact size, 15 GPIOs fully exposed, built-in USB port, supports software switching between receiver/transmitter modes |
-| RF Module            | E28/A28/E80| Wireless Communication | Supports dual-band (900MHz + 2.4GHz) for stable ELRS protocol transmission  |
+## 🚀 Key Innovations
+- **No SMD Soldering Required**: Uses pre-built ESP32-C3 & RF modules only  
+- **Dual-Function Hardware**: Software-configurable as receiver or transmitter  
+- **Beginner-Friendly Assembly**: Connect modules via jumper wires or custom PCB  
+- **Cost Efficiency**: Total BOM under **¥30 (≈$4.2) in China** 
+- **Advanced Connectivity**: UART, PWM, voltage sensing, I²C expansion  
 
-### Docs & Files
-Supporting files (including ESP32-C3 firmware, PCB design reference diagrams, pinout maps) are available for download in the GitHub repository:  
-[Replace with your GitHub repository link here]
+## 📦 Core Hardware
+| Module | Specification | Key Notes |
+|--------|---------------|-----------|
+| **ESP32-C3 Super Mini** | 4MB Flash, USB-C, 13 GPIO | ⚠️ Avoid fake boards without flash memory |
+| **RF Module** | SX1280/1281(E28/A28) and LR1121（E80）| ❌ PA modules not supported |
 
-### Support & Collaboration
-If you encounter issues during reproduction (e.g., module communication failures, function errors), leave a message in the GitHub "Issues" section or contact the author. Contributions of derivative works (e.g., optimized PCBs, new function firmware) are welcome to jointly improve the solution.
-Note for international users**: The following content is a detailed Chinese version of the project (including assembly guides, expansion tips, etc.). For full technical details, please use translation tools (e.g., Google Translate) if needed.
-前所未有！！我能让你永远不用买任何「成品elrs设备」，作者：坚持不用舵ServolessWaverider，本人是一名喜爱电子和无人机的高中生，本文章和本项目均为原创，允许转载，但必须注明来源及作者。欢迎复刻，二创，但必须遵守开源协议，不要把本作品说成是自己造的哦。
+## ⚡ Quick Start
+1. **Flash Firmware** via USB using ELRS Configurator or ELRS Web Flasher
+   - Target: `Generic ESP32-C3`
+   - Select `Standard` or `PWM Output` firmware
+2. **Connect Modules** with 9 wires (SPI+RST+BUSY+DIO)  
+   - GPIO mapping freedom 
+3. **Configure Hardware** at `10.0.0.1/hardware.html`
+4. **Mount & Fly**! Supports Betaflight/INAV/ArduPilot/PX4 （CRSF protocols）
+
+---
+
+### 🌍 Cost Comparison by Region(All countries except China are for reference only.)
+| Region       | Modules Cost | Shipping | Est. Total | Availability |
+|--------------|--------------|----------|------------|--------------|
+| China Mainland | ¥25          | ¥0       | **$3.5**   | 2-3days (Sent from Shenzhen)    |
+| USA          | $9           | $4       | **$13**    | 2-3 weeks    |
+| EU           | €8           | €5       | **€13**    | 3-4 weeks    |
+Even in China, this is a very low price – three times cheaper than commercially available finished products.
+
+---
+
+## 🔗 Resources
+- [📺 Video Tutorial](https://b23.tv/cTPp4Ne) · [📁 PCB Files](https://oshwhub.com/jianchibuyongduo/board2)  
+- [💬 QQ Group 902021691] · [📚 Full Docs](https://xcnmlw0olagh.feishu.cn/wiki/SgmEwbcjciPRihklynUcdX4qnAJ)  
+
+---
+**License**: GPL-3.0 · **Designed by** [ServolessWaverider](https://github.com/ServolessWaveRider)  
+> *Proudly created by a Chinese high school student – innovation has no age barriers.I want to boost global drone enthusiasts' innovation!*  
+
+---
+
+**For complete technical details, assembly guides, and advanced configurations, continue reading below ↓**  
+*(Note: Following content is in Chinese. International users may use browser translation)*
+
+
+
+前所未有！！我能让你永远不用买任何「成品elrs设备」
+作者：坚持不用舵ServolessWaverider，本人是一名喜爱电子和无人机的高中生，本文章和本项目均为原创，允许转载，但必须注明来源及作者。欢迎复刻，二创，但必须遵守开源协议，不要把本作品说成是自己造的哦。
 [图片]
 [图片]
 
